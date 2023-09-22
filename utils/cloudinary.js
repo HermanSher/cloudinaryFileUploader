@@ -1,11 +1,13 @@
 // const cloudinaryModule = require("cloudinary");
+require("dotenv").config(); // Load environment variables from .env file
+
 const cloudinary = require("cloudinary").v2;
 
-// Configure Cloudinary
+// Configure Cloudinary using environment variables
 cloudinary.config({
-  cloud_name: "dycb3yukf",
-  api_key: "982458441341694",
-  api_secret: "7bGzmm3zLt2ZFCgELX6bBbwdyfM",
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 module.exports = cloudinary;
